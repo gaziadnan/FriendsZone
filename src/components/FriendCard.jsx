@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const statusStyles = {
@@ -19,12 +18,10 @@ const FriendCard = ({ friend }) => {
       transition duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]"
     >
       {/* Profile Image */}
-      <Image
+      <img
         src={friend.picture}
         alt={friend.name}
-        width={70}
-        height={70}
-        className="rounded-full object-cover mb-3"
+        className="w-[70px] h-[70px] rounded-full object-cover mb-3"
       />
 
       {/* Name */}
