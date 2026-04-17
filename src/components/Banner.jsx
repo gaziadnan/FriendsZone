@@ -2,8 +2,8 @@ import { Plus } from "lucide-react";
 
 const Banner = () => {
   return (
-    <div className="w-full bg-[#F8FAFC] flex justify-center py-16">
-      <div className="w-full max-w-[1110px] px-6 text-center">
+    <div className="w-full bg-[#F8FAFC] flex justify-center py-10">
+      <div className="w-full max-w-[1110px] px-10 mt-10 text-center">
         
         {/* Title */}
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
@@ -23,7 +23,7 @@ const Banner = () => {
         </button>
 
         {/* Summary Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 mb-10">
           
           {/* Card 1 */}
           <div className="bg-white rounded-xl shadow-sm py-8">
@@ -50,8 +50,9 @@ const Banner = () => {
           </div>
 
         </div>
-
+<hr className="border-[#e9e9e9b5] border-1 mt-12" />
       </div>
+      
     </div>
   );
 };

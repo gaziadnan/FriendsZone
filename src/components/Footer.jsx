@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-    <footer className="bg-[#244D3F] text-white mt-16 flex justify-center items-center h-[413px]">
+    <footer className="bg-[#244D3F] text-white flex justify-center items-center h-[413px]">
       
-      <div className="w-full max-w-6xl px-4 text-center">
+      <div className="w-full max-w-6xl px-4 text-center mt-14">
         
         {/* Logo Image */}
         <div className="flex justify-center mb-4">
@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
 
         {/* Subtitle */}
-        <p className="text-white-400 mb-6 max-w-2xl mx-auto">
+        <p className="text-[#fafafa83] mb-6 max-w-4xl mx-auto">
           Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
         </p>
 
@@ -38,10 +38,10 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <hr className="border-gray-400 mb-6" />
+        <hr className="border-[#2f5b4ab6] border-1 mb-6" />
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-200">
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-[#fafafa64]">
           
           <p>© 2026 KeenKeeper. All rights reserved.</p>
 

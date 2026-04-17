@@ -3,17 +3,28 @@ import FriendCard from "./FriendCard";
 
 const FriendsSection = () => {
   return (
-    <div className="w-full bg-[#F8FAFC] flex justify-center py-12">
-      {/* Fixed Width Container */}
-      <div className="w-full max-w-[1110px]">
+    <div className="w-full bg-[#F8FAFC] flex justify-center pb-20">
+      
+      {/* ✅ Fixed container */}
+      <div className="w-full max-w-[1110px] px-4">
         
         {/* Title */}
         <h2 className="text-[20px] font-semibold text-gray-800 mb-8">
           Your Friends
         </h2>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-8 gap-x-6 justify-items-center">
+        {/* ✅ Responsive + Exact Desktop Grid */}
+        <div className="
+          grid 
+          grid-cols-1 
+          sm:grid-cols-2 
+          md:grid-cols-3 
+          lg:grid-cols-[repeat(4,259px)] 
+          gap-6 
+          lg:gap-[24px] 
+          justify-center 
+          lg:justify-between
+        ">
           {friends.map((friend) => (
             <FriendCard key={friend.id} friend={friend} />
           ))}

@@ -2,6 +2,7 @@
 
 import { useParams } from "next/navigation";
 import friends from "@/data/friends.json";
+import toast from "react-hot-toast"; 
 
 const getStatusColor = (status) => {
   if (status === "overdue") return "bg-red-500";
@@ -15,19 +16,31 @@ export default function FriendDetailsPage() {
 
   if (!friend) return <div className="p-10">Friend not found</div>;
 
-  // ✅ UPDATED FUNCTION (IMPORTANT)
   const handleCheckIn = (type) => {
     const newEntry = {
-      date: new Date().toLocaleDateString(),
+      date: new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      }),
       type,
-      title: `${type} with ${friend.name}`,
+      title: `${type} with ${friend.name}`, // ✅ name included
     };
 
-    // 🔥 localStorage এ save
     const existing = JSON.parse(localStorage.getItem("timeline")) || [];
-    localStorage.setItem("timeline", JSON.stringify([newEntry, ...existing]));
 
-    alert(`${type} added!`);
+    localStorage.setItem(
+      "timeline",
+      JSON.stringify([newEntry, ...existing])
+    );
+
+
+    toast.success(`${type} with ${friend.name}`, {
+      style: {
+        background: "#244D3F",
+        color: "#fff",
+      },
+    });
   };
 
   return (
@@ -36,18 +49,20 @@ export default function FriendDetailsPage() {
 
         {/* LEFT SIDE */}
         <div className="space-y-4">
-          
           <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
             <img
               src={friend.picture}
               className="w-20 h-20 rounded-full mx-auto mb-3 object-cover"
+              alt={friend.name}
             />
 
             <h2 className="text-lg font-semibold text-gray-800">
               {friend.name}
             </h2>
 
-            <span className={`text-white px-3 py-1 rounded-full text-xs ${getStatusColor(friend.status)}`}>
+            <span
+              className={`text-white px-3 py-1 rounded-full text-xs ${getStatusColor(friend.status)}`}
+            >
               {friend.status === "on-track"
                 ? "On-Track"
                 : friend.status === "almost due"
@@ -123,7 +138,10 @@ export default function FriendDetailsPage() {
                 Relationship Goal
               </h3>
               <p className="text-sm text-gray-500">
-                Connect every <span className="font-semibold">{friend.goal} days</span>
+                Connect every{" "}
+                <span className="font-semibold">
+                  {friend.goal} days
+                </span>
               </p>
             </div>
 
