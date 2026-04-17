@@ -2,7 +2,6 @@
 
 import { useParams } from "next/navigation";
 import friends from "@/data/friends.json";
-import { useState } from "react";
 
 const getStatusColor = (status) => {
   if (status === "overdue") return "bg-red-500";
@@ -14,10 +13,9 @@ export default function FriendDetailsPage() {
   const { id } = useParams();
   const friend = friends.find((f) => f.id == id);
 
-  const [timeline, setTimeline] = useState([]);
-
   if (!friend) return <div className="p-10">Friend not found</div>;
 
+  // ✅ UPDATED FUNCTION (IMPORTANT)
   const handleCheckIn = (type) => {
     const newEntry = {
       date: new Date().toLocaleDateString(),
@@ -25,7 +23,10 @@ export default function FriendDetailsPage() {
       title: `${type} with ${friend.name}`,
     };
 
-    setTimeline((prev) => [...prev, newEntry]);
+    // 🔥 localStorage এ save
+    const existing = JSON.parse(localStorage.getItem("timeline")) || [];
+    localStorage.setItem("timeline", JSON.stringify([newEntry, ...existing]));
+
     alert(`${type} added!`);
   };
 
@@ -36,7 +37,6 @@ export default function FriendDetailsPage() {
         {/* LEFT SIDE */}
         <div className="space-y-4">
           
-          {/* Profile Card */}
           <div className="bg-white p-6 rounded-2xl shadow-sm text-center">
             <img
               src={friend.picture}
