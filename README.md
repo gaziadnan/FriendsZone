@@ -1,36 +1,177 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🧠 KeenKeeper
 
-## Getting Started
+## 📌 Project Description
+KeenKeeper is a modern web application that helps users manage and maintain meaningful relationships. Users can track interactions with friends, set communication goals, and visualize engagement through analytics.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Technologies Used
+- Next.js (App Router)
+- Tailwind CSS
+- Recharts
+- React Hot Toast
+- LocalStorage
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Features & Functionality
 
-## Learn More
+### 🧑‍🤝‍🧑 Friend Management
+- View all friends in a clean card-based layout
+- Each card displays profile picture, name, tags, and contact status
+- Dynamic status indicators: Overdue, Almost Due, On-Track
 
-To learn more about Next.js, take a look at the following resources:
+### 🔍 Friend Details Page
+- Detailed view for each friend with profile info, bio, and email
+- Status badge with color indication
+- Action buttons: Snooze, Archive, Delete (UI only)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### ⚡ Quick Check-In System
+- Instantly log interactions (Call, Text, Video)
+- Automatically stores interaction history in localStorage
+- Dynamic titles like:
+  - "Call with Rakib Hossain"
+  - "Text with Alex Johnson"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🔔 Toast Notifications
+- Real-time feedback using react-hot-toast
+- Shows success message when interaction is logged
+- Custom styled toast for better UI experience
 
-## Deploy on Vercel
+### 📜 Timeline System
+- Displays all interaction history in chronological order
+- Each entry includes date, type, and title
+- Icons for Call, Text, and Video interactions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🔎 Timeline Filtering
+- Filter interactions by:
+  - All
+  - Call
+  - Text
+  - Video
+- Helps users quickly find specific interaction types
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 📊 Friendship Analytics (Stats Page)
+- Visual Pie Chart using Recharts
+- Displays distribution of Call, Text, and Video interactions
+- Clean and interactive data visualization
+
+### 🎯 Banner Section
+- Attractive hero section with title, subtitle, and CTA button
+- Summary cards showing key insights
+
+### 🧭 Navigation System
+- Fully functional Navbar with active link highlighting
+- Smooth routing using Next.js App Router
+
+### 🦶 Footer Section
+- Social media links with icons
+- Informational links (Privacy Policy, Terms, Cookies)
+- Clean and modern design
+
+### 📱 Responsive Design
+- Fully responsive across mobile, tablet, and desktop
+- Optimized grid layout for all screen sizes
+
+### ⏳ Loading State
+- Custom loading spinner while fetching data
+- Improves user experience
+
+### 🚫 404 Page
+- Custom Not Found page for invalid routes
+- Prevents navigation errors
+
+### 💾 Data Handling
+- Friend data stored in a local JSON file
+- Timeline interactions stored in browser localStorage
+
+
+---
+
+### 👤 Friend Details Page
+- Two-column responsive layout
+- Shows:
+  - Profile picture
+  - Name and status
+  - Tags
+  - Bio and email
+- Action buttons:
+  - Snooze
+  - Archive
+  - Delete
+- Quick Check-In:
+  - Call
+  - Text
+  - Video
+
+---
+
+### ⚡ Interaction Tracking
+- Clicking Call/Text/Video:
+  - Adds entry to timeline
+  - Saves data in localStorage
+  - Shows toast notification
+
+---
+
+### 📜 Timeline Page
+- Displays all interaction history
+- Each entry includes:
+  - Date
+  - Icon (Call/Text/Video)
+  - Title (e.g. "Call with John")
+- Filter options:
+  - All
+  - Call
+  - Text
+  - Video
+
+---
+
+### 📊 Friendship Analytics
+- Pie chart using Recharts
+- Shows total:
+  - Call
+  - Text
+  - Video interactions
+
+---
+
+
+
+### 🛠️ Additional Features
+- Custom 404 Page
+- Loading state
+- Active Navbar highlighting
+- Data persistence using localStorage
+
+---
+
+## 📂 Folder Structure
+app/
+├── layout.js
+├── page.js
+├── timeline/
+├── stats/
+├── friend/[id]/
+├── not-found.js
+
+components/
+├── Navbar.jsx
+├── Footer.jsx
+├── FriendCard.jsx
+├── Banner.jsx
+
+data/
+└── friends.json
+
+
+---
+
+## 🌐 Live Demo
+(https://friends-zone-eight.vercel.app/)
+
+---
+
+Gazi Adnan

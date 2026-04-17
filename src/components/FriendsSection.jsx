@@ -3,30 +3,29 @@ import FriendCard from "./FriendCard";
 
 const FriendsSection = () => {
   return (
-    <div className="w-full bg-[#F8FAFC] flex justify-center pb-20">
+    <div className="w-full bg-[#F8FAFC] pb-20">
       
-      {/* ✅ Fixed container */}
-      <div className="w-full max-w-[1110px] px-4">
+      {/* ✅ CENTER CONTAINER */}
+      <div className="max-w-[1110px] mx-auto px-10">
         
         {/* Title */}
         <h2 className="text-[20px] font-semibold text-gray-800 mb-8">
           Your Friends
         </h2>
 
-        {/* ✅ Responsive + Exact Desktop Grid */}
+        {/* ✅ RESPONSIVE GRID */}
         <div className="
-          grid 
-          grid-cols-1 
-          sm:grid-cols-2 
-          md:grid-cols-3 
-          lg:grid-cols-[repeat(4,259px)] 
-          gap-6 
-          lg:gap-[24px] 
-          justify-center 
-          lg:justify-between
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          md:grid-cols-3
+          lg:grid-cols-4
+          gap-6
         ">
           {friends.map((friend) => (
-            <FriendCard key={friend.id} friend={friend} />
+            <div key={friend.id} className="flex justify-center">
+              <FriendCard friend={friend} />
+            </div>
           ))}
         </div>
 
